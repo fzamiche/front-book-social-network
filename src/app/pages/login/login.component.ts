@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {AuthenticationRequest} from "../../services/models/authentication-request";
 import {Router} from "@angular/router";
 import {AuthenticationService} from "../../services/services/authentication.service";
+import {JwtTokenService} from "../../services/jwt-token-service/jwt-token.service";
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent {
 
   constructor(
     private router: Router,
-    private authService: AuthenticationService) {
+    private authService: AuthenticationService,
+    private tokenService: JwtTokenService) {
   }
 
   login() {
@@ -23,8 +25,8 @@ export class LoginComponent {
     this.authService.authenticate({
       body: this.authRequest
     }).subscribe({
-      next: () => {
-        // save token
+      next: (result) => {
+        this.tokenService.jwtToken = result.jwtToken as string;
         this.router.navigate(['books']);
       },
       error: (err) => {
