@@ -6,19 +6,23 @@ import { AppComponent } from './app.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './pages/login/login.component';
 import {FormsModule} from "@angular/forms";
+import { ActivateAccountComponent } from './pages/activate-account/activate-account.component';
+import {CodeInputModule} from "angular-code-input";
 import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    ActivateAccountComponent,
     RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CodeInputModule
   ],
   providers: [
     HttpClient
