@@ -1,0 +1,12 @@
+/*
+* 1. Créer la documentation de l'application Angular
+npm run compodoc
+
+* 2. Lancer le serveur de documentation
+npm run compodoc-serve
+*/
+
+{
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/test.ts", "src/**/*.spec.ts", "src/app/file-to-exclude.ts"]
+}
