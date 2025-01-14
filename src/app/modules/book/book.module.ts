@@ -6,7 +6,6 @@ import { MainComponent } from './pages/main/main.component';
 
 
 @NgModule({
-  declarations: [],
   declarations: [
     MainComponent,
   ],
