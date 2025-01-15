@@ -10,8 +10,9 @@ import {PageResponseBookResponse} from "../../../../services/models/page-respons
 })
 export class BookListComponent implements OnInit {
 
+
   public page: number = 0;
-  public size: number = 10;
+  public size: number = 3;
   public bookResponse: PageResponseBookResponse = {};
 
   constructor(
@@ -33,4 +34,30 @@ export class BookListComponent implements OnInit {
       }
     });
   }
+
+  goToFirsPage() {
+    this.page = 0;
+    this.findAllBooks();
+  }
+
+  goToPreviousPage() {
+    this.page--;
+    this.findAllBooks();
+  }
+
+  goToPage(pageIndex: number) {
+    this.page = pageIndex;
+    this.findAllBooks();
+  }
+
+  goToNextPage() {
+    this.page++;
+    this.findAllBooks();
+  }
+
+  goToLastPage() {
+    this.page = this.bookResponse.totalPages as number - 1;
+    this.findAllBooks();
+  }
+
 }
