@@ -11,11 +11,11 @@ import {BookResponse} from "../../../../services/models/book-response";
 })
 export class BookListComponent implements OnInit {
 
-  public page: number = 0;
-  public size: number = 10;
-  public bookResponse: PageResponseBookResponse = {};
-  public message: string = '';
-  public isSuccessBorrow: boolean = false;
+  page: number = 0;
+  size: number = 10;
+  bookResponse: PageResponseBookResponse = {};
+  message: string = '';
+  isSuccessBorrow: boolean = false;
 
   constructor(
     private bookService: BookService,
