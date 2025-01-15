@@ -5,45 +5,45 @@ import {Router} from "@angular/router";
 import {BookResponse} from "../../../../services/models/book-response";
 
 @Component({
-  selector: 'app-my-books',
-  templateUrl: './my-books.component.html',
-  styleUrls: ['./my-books.component.scss']
+    selector: 'app-my-books',
+    templateUrl: './my-books.component.html',
+    styleUrls: ['./my-books.component.scss']
 })
-export class MyBooksComponent implements OnInit{
+export class MyBooksComponent implements OnInit {
 
-  public page: number = 0;
-  public size: number = 10;
-  public bookResponse: PageResponseBookResponse = {};
+    page: number = 0;
+    size: number = 10;
+    bookResponse: PageResponseBookResponse = {};
 
-  constructor(
-    private bookService: BookService,
-    private router: Router) {
-  }
+    constructor(
+        private bookService: BookService,
+        private router: Router) {
+    }
 
-  ngOnInit(): void {
-    this.findAllBooks();
-  }
+    ngOnInit(): void {
+        this.findAllBooks();
+    }
 
-  private findAllBooks() {
-    this.bookService.findAllBooksByOwner({
-      page: this.page,
-      size: this.size
-    }).subscribe({
-      next: (books) => {
-        this.bookResponse = books;
-      }
-    });
-  }
+    private findAllBooks() {
+        this.bookService.findAllBooksByOwner({
+            page: this.page,
+            size: this.size
+        }).subscribe({
+            next: (books) => {
+                this.bookResponse = books;
+            }
+        });
+    }
 
-  onArchiveBook(book: BookResponse) {
+    onArchiveBook(book: BookResponse) {
 
-  }
+    }
 
-  onShareBook($event: BookResponse) {
+    onShareBook($event: BookResponse) {
 
-  }
+    }
 
-  onEditBook($event: BookResponse) {
+    onEditBook($event: BookResponse) {
 
-  }
+    }
 }
