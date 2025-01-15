@@ -35,29 +35,8 @@ export class BookListComponent implements OnInit {
     });
   }
 
-  goToFirsPage() {
-    this.page = 0;
-    this.findAllBooks();
-  }
-
-  goToPreviousPage() {
-    this.page--;
-    this.findAllBooks();
-  }
-
-  goToPage(pageIndex: number) {
+  onPageChange(pageIndex: number) {
     this.page = pageIndex;
     this.findAllBooks();
   }
-
-  goToNextPage() {
-    this.page++;
-    this.findAllBooks();
-  }
-
-  goToLastPage() {
-    this.page = this.bookResponse.totalPages as number - 1;
-    this.findAllBooks();
-  }
-
 }
