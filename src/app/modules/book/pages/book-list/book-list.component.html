@@ -1,5 +1,14 @@
 <h3>Books list</h3>
+<div *ngIf="message"
+     class="alert"
+     [ngClass]="{'alert-success': isSuccessBorrow , 'alert-danger': !isSuccessBorrow}">
+  {{ message }}
+</div>
 <hr>
 <div class="d-flex justify-content-start gap-2 flex-wrap">
-  <app-book-card *ngFor="let book of bookResponse.content" [book]="book"></app-book-card>
+  <app-book-card
+    *ngFor="let book of bookResponse.content"
+    [book]="book"
+    (borrow)=onBorrowBook($event)
+  ></app-book-card>
 </div>
