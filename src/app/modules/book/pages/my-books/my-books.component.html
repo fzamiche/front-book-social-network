@@ -18,5 +18,13 @@
       (edit)="onEditBook($event)"
     ></app-book-card>
   </div>
-
+  <div class="d-flex justify-content-center mt-3">
+    <app-pagination
+      [page]="page"
+      [totalPages]="bookResponse.totalPages"
+      [first]="bookResponse.first"
+      [last]="bookResponse.last"
+      (pageChange)="onPageChange($event)"
+    ></app-pagination>
+  </div>
 </div>
