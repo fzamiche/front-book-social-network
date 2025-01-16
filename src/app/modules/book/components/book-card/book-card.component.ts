@@ -32,7 +32,7 @@ export class BookCardComponent {
   }
 
   @Input()
-  set manage(value: boolean) {
+  set isManager(value: boolean) {
     this._isManager = value;
   }
 

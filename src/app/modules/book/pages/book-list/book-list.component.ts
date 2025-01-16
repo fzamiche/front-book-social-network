@@ -37,6 +37,11 @@ export class BookListComponent implements OnInit {
     });
   }
 
+  onPageChange(pageIndex: number) {
+    this.page = pageIndex;
+    this.findAllBooks();
+  }
+
   onBorrowBook(book: BookResponse) {
     this.message = '';
     this.bookService.borrowBook({
