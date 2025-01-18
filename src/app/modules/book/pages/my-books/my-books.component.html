@@ -2,7 +2,7 @@
 
   <div class="d-flex justify-content-between align-items-center">
     <h3>My book list</h3>
-    <a routerLink="/books-manager" class="btn btn-outline-primary">
+    <a [routerLink]="['/books', 'manage-book']" class="btn btn-outline-primary">
       <i class="fas fa-plus">&nbsp;New book</i>
     </a>
   </div>
