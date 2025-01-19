@@ -42,12 +42,14 @@
         <button class="btn btn-outline-success" type="submit">
           <i class="fas fa-search"></i>
         </button>
+      </form>
+      <div class="ms-3">
         <span>Welcome</span>
-        <span class="text-capitalize fw-bold">fatah</span>
+        <span class="text-capitalize fw-bold">{{ userName || 'Guest' }}</span>
         <button class="btn btn-link" type="button" (click)="logout()">
           <i class="fas fa-door-open"></i>
         </button>
-      </form>
+      </div>
     </div>
   </div>
 </nav>
