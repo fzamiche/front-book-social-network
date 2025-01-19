@@ -92,7 +92,7 @@
         <div class="d-flex gap-2">
           <i *ngIf="book.returned" class="cursor-pointer fa-regular fa-paper-plane text-primary"></i>
           <i (click)="returnBorrowedBook(book)" *ngIf="!book.returned" class="cursor-pointer fa-solid fa-paper-plane text-success"></i>
-          <i [class.text-success]="book.returnApproved" class="cursor-pointer fa-solid fa-circle-check"></i>
+          <i [class.text-success]="!book.returnApproved" class="cursor-pointer fa-solid fa-circle-check"></i>
         </div>
       </td>
     </tr>

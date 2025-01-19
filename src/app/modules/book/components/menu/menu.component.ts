@@ -9,6 +9,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.setActiveLink();
+
   }
 
   // Permet de gérer dynamiquement le style de la classe active sur le menu en fonction de la page courante
@@ -26,6 +27,7 @@ export class MenuComponent implements OnInit {
   }
 
   logout() {
-
+      localStorage.removeItem('jwt-token');
+      window.location.reload();
   }
 }
